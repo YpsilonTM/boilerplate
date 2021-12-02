@@ -6,6 +6,7 @@
 
 <script>
 import PlaceHolder from './components/PlaceHolder';
+import NUI from './nui';
 
 export default {
   name: 'App',
@@ -17,16 +18,12 @@ export default {
   data: () => ({}),
 
   mounted() {
-    window.addEventListener('message', (e) => {});
-    window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        axios.post('https://boilerplate/close');
-      }
+    NUI.OnKeyEvent('Escape', () => {
+      NUI.Post('boilerplate', 'close');
     });
   },
   unmounted() {
-    window.removeEventListener('message');
-    window.removeEventListener('keydown');
+    NUI.RemoveNuiListener();
   },
 };
 </script>
