@@ -2,7 +2,7 @@ import axios from "axios"
 
 const NUI = {
   OnNuiEvent(type, func) {
-    window.addEventListener('messsage', (e) => {
+    window.addEventListener('message', (e) => {
       if (e.data.type == type) {
         func(e.data)
       }
