@@ -9,7 +9,7 @@ client_scripts {
     'config.lua',
     'client/cl_main.lua',
 }
-server_script {
+server_scripts {
     'config.lua',
     'server/sv_main.lua',
 }
